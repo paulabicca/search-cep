@@ -1,15 +1,22 @@
+//@breakpoints
+$breakpoint-phone: 530px;
+
 .container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #1C2833;
   animation: flipTitle 2s;
+  background-color: #1C2833;
 
   .title {
     font-size: 50px;
     color: #FFF;
+    @media (max-width: $breakpoint-phone) {
+      font-size: 30px;
+      padding-top: 20px;
+    }
   }
   
   @keyframes flipTitle {
@@ -22,37 +29,36 @@
   }
   
   .wrapper {
-    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
     padding: 15px;
     margin: 34px 0;
-    display: flex;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
 
     input {
-      background-color: transparent;
-      border: 0;
-      font-size: 20px;
-      color: #FFF;
       outline: none;
       margin-right: 8px;
+      border: 0;
+      background-color: transparent;
+      font-size: 20px;
+      color: #FFF;
 
-      ::placeholder  {
+      &::placeholder  {
         color: #f1f1f1;
       }
     }
   }
 
   .buttonSearch {
-    background-color: transparent;
-    border: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: transform 0.5s;
-
-    :hover {
+    border: 0;
+    background-color: transparent;
+    &:hover {
       transform: scale(1.2);
     }
   }
@@ -66,9 +72,16 @@
     width: 500px;
     border-radius: 8px;
 
+    @media (max-width: $breakpoint-phone) {
+      width: 96%;
+    }
+
     h2 {
       margin: 16px 0;
       font-size: 26px;
+      @media (max-width: $breakpoint-phone) {
+        font-size: 24px;
+      }
     }
     
     span { margin-bottom: 16px; }
